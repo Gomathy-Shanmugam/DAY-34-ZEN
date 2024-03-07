@@ -1,0 +1,264 @@
+DROP DATABASE IF EXISTS zenclass;
+DROP DATABASE IF EXISTS student;
+DROP DATABASE IF EXISTS mentor;
+DROP DATABASE IF EXISTS queries;
+DROP DATABASE IF EXISTS TASKS;
+
+CREATE DATABASE zenclass;
+USE zenclass;
+
+CREATE TABLE user (
+  userid INT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(25) UNIQUE,
+  password VARCHAR(25) NOT NULL
+);
+
+INSERT INTO user (userid, username, password) VALUES
+(1, 'Gomathy', '123'),
+(2, 'Anu', 'anu@78'),
+(3, 'Abi', 'abi@890'),
+(4, 'Abinaya', 'paasword@123'),
+(5, 'Babu', 'pass@134'),
+(6, 'Bakkiya', 'bakkiaya@56'),
+(7, 'Gayathri', 'gayu*123'),
+(8, 'Deepa', 'deepika01'),
+(9, 'Devi', 'devi@89'),
+(10, 'Joo', 'joosuriya01'),
+(11, 'Jeya', 'jeyapriya@00'),
+(12, 'Shankar', 'shankar@12');
+SELECT * FROM user;
+
+
+USE zenclass;
+CREATE TABLE student(
+BatchNo INT  ,
+name TEXT ,
+DOB INT not null
+);
+
+INSERT INTO student(BatchNo,Name,DOB)VALUES(54,"Gomathy",1232000),
+(54,"Anu",123234),
+(54,"Arun",123567),
+(54,"Arivu",123567),
+(54,"Banu",15091999),
+(54,"Babu",18091999),
+(54,"Bakkiya",21091999),
+(54,"Chandra",17012002),
+(54,"Deepa",18021000),
+(54,"Devi",01022002),
+(54,"Ellakiya",02022002),
+(54,"Elakiya",18051980),
+(54,"Elango",22022002),
+(54,"Gokul",23091997),
+(54,"Joo",16041998),
+(54,"Jaya",17012002),
+(54,"Shobana",28061930),
+(54,"Shakthi",30111999),
+(54,"Saranya",29022004),
+(54,"Kiruthika",17012002);
+SELECT * FROM student;
+
+USE zenclass;
+CREATE TABLE mentor(
+BatchNo INT  ,
+Name TEXT ,
+BatchTiming INT not null,
+Subject TEXT
+);
+
+INSERT INTO mentor(BatchNo,Name,BatchTiming,Subject)VALUES
+(50,"Arshad",12,"UI/UX"),
+(52,"Anu",10,"CYBER SECURITY"),
+(54,"Abi",12,"FSD"),
+(51,"Abinaya",2,"Aritifical Intelligence"),
+(54,"Arun",2,"FSD"),
+(53,"Babu",10,"Data Science"),
+(54,"Abi",2,"Aritifical Intelligence"),
+(53,"Bakkiya",11,"Data Science"),
+(51,"Abi",1,"Aritifical Intelligence"),
+(54,"Abi",2,"FSD"),
+(52,"Praveen",3,"CYBER SECURITY"),
+(54,"Abi",4,"FSD"),
+(52,"Arivu",5,"CYBER SECURITY"),
+(50,"Sarath",12,"UI/UX"),
+(52,"Anu",10,"CYBER SECURITY"),
+(50,"Shabana",12,"UI/UX"),
+(52,"Sakthi",10,"CYBER SECURITY"),
+(54,"Suresh",12,"FSD"),
+(51,"Sekar",4,"Aritifical Intelligence"),
+(50,"Shankar",3,"UI/UX");
+
+SELECT * FROM mentor;
+
+USE zenclass;
+CREATE TABLE queries(
+BatchNo INT  ,
+Topic TEXT ,
+Description TEXT,
+AvailableTime INT not null,
+QueryNo INT,
+Language TEXT
+);
+
+INSERT INTO queries(BatchNo,Topic,Description,AvailableTime,QueryNo,Language)VALUES(54,"React","router",12,124,"Tamil");
+INSERT INTO queries(BatchNo,Topic,Description,AvailableTime,QueryNo,Language)VALUES(44,"JS","Async/await",4,567,"English");
+INSERT INTO queries(BatchNo,Topic,Description,AvailableTime,QueryNo,Language)VALUES(24,"MYSQL","normalization",10,675,"Tamil");
+INSERT INTO queries(BatchNo,Topic,Description,AvailableTime,QueryNo,Language)VALUES(56,"HTML","ELEMENT",1,567,"English");
+INSERT INTO queries(BatchNo,Topic,Description,AvailableTime,QueryNo,Language)VALUES(24,"MYSQL","normalization",10,675,"Tamil");
+SELECT * FROM queries;
+
+USE zenclass;
+CREATE TABLE TASKS
+(_STUDENT_ID INTEGER,NO_OF_DAYS INTEGER,TASK_COMPLETION TEXT);
+
+INSERT INTO TASKS
+(_STUDENT_ID,NO_OF_DAYS,TASK_COMPLETION)
+VALUES
+(1,1,"Yes"),
+(1,2,"Yes"),
+(1,3,"NO"),
+(1,4,"Yes"),
+(1,5,"Yes"),
+(1,5,"Yes"),
+(1,6,"Yes"),
+(1,7,"NIL"),
+(1,8,"Yes"),
+(1,9,"Yes"),
+(1,10,"NIL"),
+(1,11,"Yes"),
+(1,12,"NIL"),
+(1,13,"NIL"),
+(1,14,"NIL"),
+(1,15,"NIL"),
+(1,16,"Yes"),
+(1,17,"NIL"),
+(1,18,"NIL"),
+(1,19,"Yes"),
+(1,20,"NIL"),
+(1,21,"Yes"),
+(1,22,"NIL"),
+(1,23,"NIL"),
+(1,24,"NIL"),
+(1,25,"Yes"),
+(1,26,"NO"),
+(1,27,"Yes"),
+(1,28,"Yes"),
+(1,29,"Yes"),
+(1,30,"NIL"),
+(1,31,"Yes"),
+(1,32,"NIL"),
+(1,33,"Yes"),
+(1,34,"Yes"),
+(1,35,"NIL"),
+(1,36,"Yes"),
+(1,37,"Yes"),
+(1,38,"Yes"),
+(1,39,"Yes"),
+(1,40,"Yes"),
+(1,41,"Yes"),
+(1,42,"Yes"),
+(1,43,"Yes"),
+(1,44,"Yes"),
+(1,45,"Yes"),
+(2,1,"Yes"),
+(2,2,"Yes"),
+(2,3,"NO"),
+(2,4,"Yes"),
+(2,5,"Yes"),
+(2,5,"Yes"),
+(2,6,"Yes"),
+(2,7,"NIL"),
+(2,8,"Yes"),
+(2,9,"Yes"),
+(2,10,"NIL"),
+(2,11,"Yes"),
+(2,12,"NIL"),
+(2,13,"NIL"),
+(2,14,"NIL"),
+(2,15,"NIL"),
+(2,16,"Yes"),
+(2,17,"NIL"),
+(2,18,"NIL"),
+(2,19,"Yes"),
+(2,20,"NIL"),
+(2,21,"Yes"),
+(2,22,"NIL"),
+(2,23,"NIL"),
+(2,24,"NIL"),
+(2,25,"Yes"),
+(2,26,"NO"),
+(2,27,"Yes"),
+(2,28,"Yes"),
+(2,29,"Yes"),
+(2,30,"NIL"),
+(2,31,"NO"),
+(2,32,"NIL"),
+(2,33,"Yes"),
+(2,34,"Yes"),
+(2,35,"NIL"),
+(2,36,"NO"),
+(2,37,"Yes"),
+(2,38,"NO"),
+(2,39,"Yes"),
+(2,40,"Yes"),
+(2,41,"NO"),
+(2,42,"Yes"),
+(2,43,"Yes"),
+(2,44,"Yes"),
+(2,45,"Yes"),
+(3,1,"Yes"),
+(3,2,"Yes"),
+(3,3,"NO"),
+(3,4,"Yes"),
+(3,5,"Yes"),
+(3,5,"Yes"),
+(3,6,"Yes"),
+(3,7,"NIL"),
+(3,8,"Yes"),
+(3,9,"Yes"),
+(3,10,"NIL"),
+(3,11,"Yes"),
+(3,12,"NIL"),
+(3,13,"NIL"),
+(3,14,"NIL"),
+(3,15,"NIL"),
+(3,16,"Yes"),
+(3,17,"NIL"),
+(3,18,"NIL"),
+(3,19,"Yes"),
+(3,20,"NIL"),
+(3,21,"Yes"),
+(3,22,"NIL"),
+(3,23,"NIL"),
+(3,24,"NIL"),
+(3,25,"NO"),
+(3,26,"NO"),
+(3,27,"Yes"),
+(3,28,"Yes"),
+(3,29,"Yes"),
+(3,30,"NIL"),
+(3,31,"Yes"),
+(3,32,"NIL"),
+(3,33,"Yes"),
+(3,34,"Yes"),
+(3,35,"NIL"),
+(3,36,"Yes"),
+(3,37,"Yes"),
+(3,38,"Yes"),
+(3,39,"Yes"),
+(3,40,"Yes"),
+(3,41,"Yes"),
+(3,42,"NO"),
+(3,43,"NO"),
+(3,44,"NO"),
+(3,45,"NO");
+
+
+
+SELECT * FROM TASKS;
+
+
+
+
+
+
